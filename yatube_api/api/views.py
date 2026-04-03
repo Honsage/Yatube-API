@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.exceptions import PermissionDenied
 
-from posts.models import Group, Post, Comment
+from posts.models import Group, Post
 from .serializers import GroupSerializer, PostSerializer, CommentSerializer
 
 
@@ -38,7 +38,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         post_id = self.kwargs.get('post_id')
         post = get_object_or_404(Post, id=post_id)
         return post.comments.all()
-    
+
     def perform_create(self, serializer):
         post_id = self.kwargs.get('post_id')
         post = get_object_or_404(Post, id=post_id)
