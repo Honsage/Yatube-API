@@ -1,2 +1,3 @@
-# api_yatube
-api_yatube
+# Yatube-API
+
+A RESTful API for Yatube Blog.
